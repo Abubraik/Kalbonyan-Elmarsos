@@ -1,4 +1,4 @@
-#######################Challenge code #####################
+####################### Challenge code #####################
 # Nearest stars to Earth
 star1 = 'Sol'
 star2 = 'Alpha Centauri'
