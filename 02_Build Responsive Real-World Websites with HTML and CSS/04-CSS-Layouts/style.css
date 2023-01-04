@@ -96,6 +96,7 @@ li {
 .author {
   font-style: italic;
   font-size: 18px;
+  margin-bottom: 0;
 }
 
 .Copyright {
@@ -160,7 +161,7 @@ nav a:link {
   padding: 20px;
   display: block; */
   margin-right: 30px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   display: inline-block;
 }
 
@@ -204,6 +205,7 @@ h2::after {
 }
 
 /* FLOATS */
+/*
 .author-img {
   float: left;
   margin-bottom: 20px;
@@ -228,18 +230,39 @@ nav {
   display: block;
 }
 
-article {
-  /* background-color: green; */
+artic le {
+
   width: 825px;
   float: left;
 }
 
 aside {
-  /* background-color: red; */
-  width: 300px;
+
+    width: 300px;
   float: right;
 }
 
 footer {
   clear: both;
+}
+*/
+
+/* FLEXBOX */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 15px;
+}
+
+.related-post {
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-start; */
 }
