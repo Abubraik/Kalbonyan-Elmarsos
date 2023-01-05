@@ -258,11 +258,44 @@ footer {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
-  gap: 15px;
+  /* gap: 20px; */
 }
 
 .related-post {
   display: flex;
   align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
   /* justify-content: flex-start; */
+  /* align-self: center; */
+}
+.related-author {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.related-link:link {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.Flex-art {
+  display: flex;
+  align-items: flex-start;
+  gap: 75px;
+  margin-bottom: 60px;
+  /* justify-content: space-between; */
+}
+aside {
+  /* align-self: flex-start; */
+  flex: 0 0 300px;
+}
+article {
+  flex: 1;
+  margin-bottom: 0;
 }
