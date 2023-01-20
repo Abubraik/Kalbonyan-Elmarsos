@@ -245,6 +245,7 @@ body {
 }
 
 .heading-primary {
+  color: #0d1831;
   font-size: 4.4rem;
   margin-bottom: 1rem;
 }
@@ -595,6 +596,7 @@ body {
   gap: 9.6rem;
   align-items: center;
   justify-content: center;
+  margin-bottom: 9.6rem;
 }
 
 .card-box {
@@ -640,4 +642,170 @@ body {
 
 .card-purple {
   box-shadow: 0 2rem 2rem rgba(89, 3, 83, 0.1);
+}
+
+.video-box {
+  grid-template-columns: 2fr 1fr;
+  margin-bottom: 3.2rem;
+}
+
+.video-box-image {
+  position: relative;
+}
+
+.video-box-image div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 4.8rem;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+.video-play-btn {
+  color: #ff3e66;
+  font-size: 2.4rem;
+  background-color: #fff;
+  padding: 3.2rem;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  cursor: pointer;
+}
+
+.video-describtion {
+  grid-template-columns: 2fr 1fr;
+  /* align-items: center; */
+  padding-left: 9.6rem;
+}
+
+.video-describtion--content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding-right: 3.2rem;
+}
+
+.video-describtion--content h2 {
+  font-size: 3rem;
+  color: #272a49;
+}
+
+.video-describtion--content p {
+  line-height: 1.4;
+}
+
+.video-describtion-btn {
+  text-decoration: none;
+  color: #0e1133;
+  margin-right: auto;
+
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 1.6rem 4.2rem;
+  background-color: #fff;
+
+  border: 1px solid rgba(135, 136, 153, 0.358);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.video-describtion-btn:hover {
+  border-color: #ea4d89;
+  color: #ea4d89;
+}
+
+.video-describtion--sliders {
+  margin-left: auto;
+  display: flex;
+  gap: 1.4rem;
+  padding-right: 1rem;
+}
+
+.slider {
+  font-size: 2rem;
+  color: rgba(135, 136, 153, 0.8);
+  padding: 1rem;
+
+  border: 1px solid rgba(135, 136, 153, 0.358);
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.slider:hover {
+  color: #fff;
+
+  background-color: rgba(135, 136, 153, 0.358);
+  box-shadow: inset 0 0 0 1px #fff;
+}
+
+/* ////////////////////////////////////////////////////////////////// */
+
+/*APP STORE SECTION */
+
+/* ////////////////////////////////////////////////////////////////// */
+
+.section-app {
+  background-color: #eef1f6;
+  padding: 12.8rem 0;
+
+  align-items: center;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+}
+
+.app-container {
+  width: 80%;
+}
+.app-container h2 {
+  line-height: 1.2;
+}
+.app-container div {
+  font-weight: 500;
+}
+
+.app-download-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.app-download-btn {
+  padding: 1rem 2.4rem;
+  border-radius: 1rem;
+  border: 2px solid #0e1133;
+  margin-top: 1.6rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+  background-color: #0e1133;
+
+  cursor: pointer;
+  /* color: #fff; */
+}
+
+.app-icon {
+  font-size: 3.6rem;
+}
+
+.android-btn {
+  background-color: #fff;
+  color: #0e1133;
+}
+
+.app-download-btn p {
+  font-size: 1.4rem;
+}
+.app-download-btn strong {
+  font-size: 2rem;
 }
