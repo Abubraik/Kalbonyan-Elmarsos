@@ -260,7 +260,7 @@ body {
 
 .heading-secondary {
   font-size: 1.6rem;
-  color: #67697e;
+  color: #525465;
 }
 .features-btn {
   text-decoration: none;
@@ -808,4 +808,41 @@ body {
 }
 .app-download-btn strong {
   font-size: 2rem;
+}
+
+/* /////////////////////////////////////// */
+
+/* PRICING SECTIOn */
+
+/* /////////////////////////////////////// */
+
+.pricing-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 8rem;
+}
+
+.pricing-type {
+  font-weight: 500;
+  border: 2px solid #aaa;
+  padding: 1.2rem 0.4rem;
+  border-radius: 2.4rem;
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 4.4rem;
+}
+
+.pricing {
+  padding: 0.8rem 1.8rem;
+  border-radius: inherit;
+
+  cursor: pointer;
+}
+
+.monthly {
+  color: #fff;
+  background-color: #ff3e66;
 }
