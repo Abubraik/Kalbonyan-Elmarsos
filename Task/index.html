@@ -11,6 +11,11 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
     <script
       src="https://kit.fontawesome.com/beabea8ee1.js"
       crossorigin="anonymous"
@@ -484,7 +489,7 @@
 
       <section class="section-pricing">
         <div class="container">
-          <div class="header-section pricing-header">
+          <div class="pricing-header">
             <h2 class="heading-primary">Simple pricing for Everyone</h2>
             <p class="heading-secondary">
               The full monty spiffy good time no biggie cack grub fantastic
@@ -498,69 +503,319 @@
           <div class="pricing-box grid grid--3--cols">
             <div class="pricing-card">
               <div class="pricing-card--header">
-                <span class="pricing-card--title">Fresh </span>
+                <span class="pricing-card--title">Fresh</span>
                 <p class="pricing-card--price">
                   <span>$</span> <strong>04</strong>/month
                 </p>
                 <p class="pricing-card--details">Get your 14 day free trial</p>
               </div>
-              <div class="">
-                <ul class="pricing-card--list">
-                  <li class="pricing-card--list--element">
-                    60-day chat history
-                  </li>
-                  <li class="pricing-card--list--element">
-                    15 GB cloud storage
-                  </li>
-                  <li class="pricing-card--list--element">24/7 Suppoty</li>
-                </ul>
+              <ul class="pricing-card--list">
+                <li class="pricing-card--list--element">
+                  <ion-icon
+                    name="checkmark-outline"
+                    class="pricing-checkmark-icon"
+                  ></ion-icon
+                  >60-day chat history
+                </li>
+                <li class="pricing-card--list--element">
+                  <ion-icon
+                    name="checkmark-outline"
+                    class="pricing-checkmark-icon"
+                  ></ion-icon
+                  >15 GB cloud storage
+                </li>
+                <li class="pricing-card--list--element">
+                  <ion-icon
+                    name="checkmark-outline"
+                    class="pricing-checkmark-icon"
+                  ></ion-icon
+                  >24/7 Support
+                </li>
+                <li></li>
+              </ul>
+              <button class="pricing-plan-btn">Choose plan</button>
+            </div>
+
+            <div class="pricing-card Sweet">
+              <div class="pricing-card--header">
+                <span class="pricing-card--title">Sweet</span>
+                <p class="pricing-card--price">
+                  <span>$</span> <strong>16</strong>/month
+                </p>
+                <p class="pricing-card--details">
+                  Billed $276 per website annually.
+                </p>
               </div>
+              <ul class="pricing-card--list">
+                <li class="pricing-card--list--element">
+                  <ion-icon
+                    name="checkmark-outline"
+                    class="pricing-checkmark-icon"
+                  ></ion-icon
+                  >60-day chat history
+                </li>
+                <li class="pricing-card--list--element">
+                  <ion-icon
+                    name="checkmark-outline"
+                    class="pricing-checkmark-icon"
+                  ></ion-icon
+                  >50 GB cloud storage
+                </li>
+                <li class="pricing-card--list--element">
+                  <ion-icon
+                    name="checkmark-outline"
+                    class="pricing-checkmark-icon"
+                  ></ion-icon
+                  >24/7 Support
+                </li>
+                <li></li>
+              </ul>
+
+              <button class="pricing-plan-btn">Choose plan</button>
             </div>
 
             <div class="pricing-card">
               <div class="pricing-card--header">
-                <span class="pricing-card--title">Fresh </span>
+                <span class="pricing-card--title">Juicy</span>
                 <p class="pricing-card--price">
-                  <span>$</span> <strong>04</strong>/month
+                  <span>$</span> <strong>27</strong>/month
                 </p>
-                <p class="pricing-card--details">Get your 14 day free trial</p>
-              </div>
-              <div class="">
-                <ul class="pricing-card--list">
-                  <li class="pricing-card--list--element">
-                    60-day chat history
-                  </li>
-                  <li class="pricing-card--list--element">
-                    15 GB cloud storage
-                  </li>
-                  <li class="pricing-card--list--element">24/7 Suppoty</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="pricing-card">
-              <div class="pricing-card--header">
-                <span class="pricing-card--title">Fresh </span>
-                <p class="pricing-card--price">
-                  <span>$</span> <strong>04</strong>/month
+                <p class="pricing-card--details">
+                  Billed $276 per website annually.
                 </p>
-                <p class="pricing-card--details">Get your 14 day free trial</p>
               </div>
-              <div class="">
-                <ul class="pricing-card--list">
+              <div class="card">
+                <ul class="pricing-card--list green-list">
                   <li class="pricing-card--list--element">
-                    60-day chat history
+                    <ion-icon
+                      name="checkmark-outline"
+                      class="pricing-checkmark-icon"
+                    ></ion-icon
+                    >60-day chat history
                   </li>
                   <li class="pricing-card--list--element">
-                    15 GB cloud storage
+                    <ion-icon
+                      name="checkmark-outline"
+                      class="pricing-checkmark-icon"
+                    ></ion-icon
+                    >Data security
                   </li>
-                  <li class="pricing-card--list--element">24/7 Suppoty</li>
+                  <li class="pricing-card--list--element">
+                    <ion-icon
+                      name="checkmark-outline"
+                      class="pricing-checkmark-icon"
+                    ></ion-icon
+                    >100 GB cloud storage
+                  </li>
+                  <li class="pricing-card--list--element">
+                    <ion-icon
+                      name="checkmark-outline"
+                      class="pricing-checkmark-icon"
+                    ></ion-icon
+                    >24/7 Support
+                  </li>
                 </ul>
+                <button class="pricing-plan-btn">Choose plan</button>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <section class="section-testimonial section-pricing">
+        <div class="container">
+          <div class="testimonial-rating">
+            <img
+              src="content/img/people/customer-1.jpg"
+              alt="testimonial image"
+              class="testimonial-img"
+            />
+            <div class="stars">
+              <ion-icon name="star" class="star-icon"></ion-icon
+              ><ion-icon name="star" class="star-icon"></ion-icon
+              ><ion-icon name="star" class="star-icon"></ion-icon
+              ><ion-icon name="star" class="star-icon"></ion-icon
+              ><ion-icon name="star" class="star-icon"></ion-icon>
+            </div>
+            <p class="testimonial-review">(4.7) review</p>
+          </div>
+          <div class="testimonial-content">
+            <p class="testimonial-text">
+              Why I say old chap that is spiffing chip shop such a fiber the
+              bee's knees,the wireless Richard fantastic do one cracking goal
+              pukka baking cakes strakers much don't get shirty with me argy
+              bargy, I naff chimney pot blimey he lost his bottle cup.
+            </p>
+            <div class="testimonial-info">
+              <div class="testimonial-author">
+                <p>Hanson Deck</p>
+                <span>Web developer</span>
+              </div>
+              <div class="testimonial-sliders">
+                <ion-icon
+                  name="arrow-back-outline"
+                  class="slider video-left-slider"
+                ></ion-icon
+                ><ion-icon
+                  name="arrow-forward-outline"
+                  class="slider video-right-slider"
+                ></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-sponsers">
+        <div class="container">
+          <div class="sponsers-header">
+            <h2 class="heading-primary">
+              Appie works best with your favorite platforms
+            </h2>
+            <p class="heading-secondary">
+              Join over 40,000 businesses worldwide.
+            </p>
+          </div>
+
+          <div class="sponsors">
+            <div class="sponsers first-row">
+              <img
+                src="content/img/sponsers/sponser-1.png"
+                alt="sponsor image"
+                class="sponser-img"
+              />
+              <img
+                src="content/img/sponsers/sponser-2.png"
+                alt="sponsor image"
+                class="sponser-img"
+              />
+              <img
+                src="content/img/sponsers/sponser-3.png"
+                alt="sponsor image"
+                class="sponser-img"
+              />
+              <img
+                src="content/img/sponsers/sponser-4.png"
+                alt="sponsor image"
+                class="sponser-img"
+              />
+              <img
+                src="content/img/sponsers/sponser-5.png"
+                alt="sponsor image"
+                class="sponser-img"
+              />
+              <img
+                src="content/img/sponsers/sponser-6.png"
+                alt="sponsor image"
+                class="sponser-img"
+              />
+            </div>
+            <div class="sponsers second-row">
+              <img
+                src="content/img/sponsers/sponser-7.png"
+                alt="sponsor image"
+                class="sponser-img"
+              />
+              <img
+                src="content/img/sponsers/sponser-8.png"
+                alt="sponsor image"
+                class="sponser-img"
+              />
+              <img
+                src="content/img/sponsers/sponser-9.png"
+                alt="sponsor image"
+                class="sponser-img"
+              />
+              <img
+                src="content/img/sponsers/sponser-10.png"
+                alt="sponsor image"
+                class="sponser-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container grid">
+          <div class="logo-col">
+            <a href="#" class="footer-logo">
+              <img src="content/img/logo.png" alt="" />
+            </a>
+            <p class="heading-secondary">
+              Appie WordPress is theme is the last theme you will ever have.
+            </p>
+            <div class="read-more footer-read">
+              <a href="#">
+                Read More
+                <ion-icon name="arrow-forward" class="read-more-icon"></ion-icon
+              ></a>
+            </div>
+            <ul class="social-links">
+              <li><a href="#" class="fa fa-facebook"></a></li>
+              <li><a href="#" class="fa fa-twitter"></a></li>
+              <li><a href="#" class="fa fa-pinterest"></a></li>
+              <li><a href="#" class="fa fa-linkedin"></a></li>
+            </ul>
+          </div>
+          <div class="nav-col">
+            <p class="footer-heading">Company</p>
+            <ul class="footer-nav">
+              <li><a href="#" class="footer-link">About Us</a></li>
+              <li><a href="#" class="footer-link">Service</a></li>
+              <li><a href="#" class="footer-link">Case Studies</a></li>
+              <li><a href="#" class="footer-link">Blog</a></li>
+              <li><a href="#" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+          <div class="nav-col">
+            <p class="footer-heading">Support</p>
+            <ul class="footer-nav">
+              <li><a href="#" class="footer-link">Community</a></li>
+              <li><a href="#" class="footer-link">Resources</a></li>
+              <li><a href="#" class="footer-link">Faqs</a></li>
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-link">Careers</a></li>
+            </ul>
+          </div>
+          <div class="Contact-col">
+            <p class="footer-heading">Get In Touch</p>
+            <div class="contact">
+              <p>
+                <ion-icon name="mail-outline" class="footer-icon"></ion-icon>
+                support@appie.com
+              </p>
+              <p>
+                <ion-icon name="call-outline" class="footer-icon"></ion-icon
+                >+(642)342 762 44
+              </p>
+              <p>
+                <ion-icon name="location-outline" class="footer-icon"></ion-icon
+                >442 Belle Terre St Floor 7, San Francisco, AV 4206
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="footer-download">
+            <div>
+              <ion-icon name="logo-apple" class="footer-icon--ios"></ion-icon>
+              <p>Download for iOS</p>
+            </div>
+            <div>
+              <ion-icon
+                name="logo-google-playstore"
+                class="footer-icon--android"
+              ></ion-icon>
+              <p>Download for Android</p>
+            </div>
+          </div>
+          <p class="copyright">
+            Copyright &copy; 1021 Appie. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </main>
 
     <script
