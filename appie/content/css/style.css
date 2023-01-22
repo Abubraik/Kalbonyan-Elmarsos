@@ -18,7 +18,10 @@
 }
 
 html {
+  position: relative;
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -27,6 +30,24 @@ body {
   font-weight: 400;
   /* color: #0e1133; */
   color: #272a49;
+  overflow-x: hidden;
+}
+
+.arrow-up {
+  padding: 1em;
+  background-color: #e45775;
+  border-radius: 5px;
+
+  position: absolute;
+  bottom: 0.3%;
+  right: 5%;
+  opacity: 0.45;
+  cursor: pointer;
+}
+
+.arrow-up-icon {
+  font-size: 1.8rem;
+  color: #fff;
 }
 
 .container {
@@ -45,6 +66,20 @@ body {
 }
 .grid--2--cols {
   grid-template-columns: repeat(2, 1fr);
+}
+
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+  /* background-color: #0d1831; */
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #333;
 }
 
 /* ///////////////////////////////////////// */
@@ -140,14 +175,14 @@ body {
 
 .heading-hero {
   color: #262947;
-  font-size: 7rem;
+  font-size: 8rem;
   line-height: 1.2;
   margin-bottom: 2.4rem;
 }
 
 .subheading {
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 2.4rem;
 }
 
 .hero-img {
@@ -158,7 +193,7 @@ body {
 .cta-container {
   position: relative;
   max-height: 20rem;
-  max-width: 35rem;
+  max-width: fit-content;
   margin-top: 3.2rem;
 }
 
@@ -190,7 +225,7 @@ body {
 
   position: absolute;
   top: 30%;
-  right: 0%;
+  right: 5%;
 }
 
 .feedback-customers {
@@ -333,6 +368,10 @@ body {
   background-color: #3bb094;
 }
 
+.how-cards {
+  margin-top: 3.2rem;
+}
+
 .feature {
   /* max-width: 35rem; */
   padding: 4.8rem 3.2rem;
@@ -393,7 +432,7 @@ body {
 
 .read-more a:link,
 .read-more a:visited {
-  width: 25%;
+  /* width: 25%; */
   text-decoration: none;
   display: flex;
   color: #5d5e5f;
@@ -411,11 +450,15 @@ body {
 
 /* ////////////////////////////////////////////////////////////////// */
 
+.section-marketing {
+  padding-bottom: 9.6rem;
+}
+
 .marketing {
   margin-top: 9.6rem;
-  max-width: 119rem;
+  /* max-width: 119rem; */
   background-color: #eff2f9;
-  padding-top: 1.2rem;
+  padding: 6.4rem;
   display: flex;
   align-items: center;
   gap: 3.2rem;
@@ -490,6 +533,11 @@ body {
 
 .section-benefits {
   background-color: #0e1133;
+  /* padding: 0 2.4rem; */
+}
+
+.section-benefits .container {
+  padding: 0 9rem;
 }
 
 .header-section {
@@ -533,7 +581,7 @@ body {
 .benefits-list-element {
   display: flex;
   /* flex-direction: column; */
-  justify-content: center;
+  /* justify-content: center; */
   padding: 3rem;
   gap: 2.4rem 3.6rem;
   border: 1px solid rgba(102, 102, 102, 0.27);
@@ -552,15 +600,17 @@ body {
 
 .color-red {
   background-color: #ff3e60;
+  box-shadow: 0 0 0 4.8px rgba(255, 62, 97, 0.12);
 }
 
 .color-blue {
   background-color: #38a7f2;
-  margin-left: 10px;
+  box-shadow: 0 0 0 4.8px rgba(56, 168, 242, 0.12);
 }
 
 .color-green {
   background-color: #34c658;
+  box-shadow: 0 0 0 4.8px rgba(52, 198, 89, 0.12);
 }
 
 .benefits-list-element-contianer {
@@ -593,7 +643,9 @@ body {
 /* ////////////////////////////////////////////////////////////////// */
 
 .small-cards {
-  display: flex;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 9.6rem;
   align-items: center;
   justify-content: center;
@@ -646,15 +698,27 @@ body {
 }
 
 .video-box {
-  grid-template-columns: 2fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  gap: 3.2rem;
   margin-bottom: 3.2rem;
 }
 
 .video-box-image {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  /* padding-right: ; */
 }
-
-.video-box-image div {
+.video-img {
+  width: 100%;
+  object-fit: cover;
+}
+.video-box--container {
+  position: relative;
+  /* display: inline-block; */
+}
+.video-play {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -665,6 +729,18 @@ body {
   border-radius: 50%;
 }
 
+.thumb-container {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+}
+
+.thumb-img {
+  /* width: 100%; */
+  /* display: inline-block; */
+  /* width: fit-content; */
+  /* height: 100%; */
+}
 .video-play-btn {
   color: #ff3e66;
   font-size: 2.4rem;
@@ -687,6 +763,7 @@ body {
 }
 
 .video-describtion--content {
+  margin-left: 8rem;
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
@@ -728,6 +805,7 @@ body {
   display: flex;
   gap: 1.4rem;
   padding-right: 1rem;
+  margin-top: 4.8rem;
 }
 
 .slider {
@@ -953,7 +1031,28 @@ body {
   border: none;
   border-top: 3px solid#ff3e66;
   box-shadow: 0 3.6rem 3.6rem rgb(0 0 0 / 10%);
+
+  position: relative;
+  overflow: hidden;
 }
+
+.Sweet::before {
+  content: "Most Popular";
+  display: inline-block;
+  font-size: 1.6rem;
+  color: #fff;
+  background-color: #3679ff;
+  font-weight: 700;
+  padding: 0.8rem 2rem;
+  border-radius: 20px;
+
+  width: 40%;
+  position: absolute;
+
+  top: 5%;
+  right: -15%;
+}
+
 .Sweet .pricing-plan-btn {
   background-color: #ff3e66;
   color: #fff;
@@ -964,9 +1063,9 @@ body {
 /* section-testimonial */
 /* ///////////////////////////////////////// */
 
-.section-testimonial .container {
+.testimonial {
   background-image: url("../img/testimonial-bg.jpg");
-  padding: 12rem 8rem;
+  padding: 6.4rem 8rem;
 
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -1066,7 +1165,7 @@ body {
   margin-bottom: 8rem;
 }
 
-.section-sponsers .heading-primary {
+.sponsers-container .heading-primary {
   max-width: 40%;
   margin: 0 auto;
   line-height: 1.3;
@@ -1091,7 +1190,7 @@ body {
 }
 
 .sponser-img {
-  padding: 2.4rem;
+  padding: 3.6rem;
   background-color: #fff;
   justify-self: center;
 
@@ -1111,13 +1210,14 @@ body {
 
 .footer {
   background-color: #eef1f6;
+  padding-top: 8rem;
 }
 
 .footer .container:first-child {
   grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
   line-height: 1.6;
-  padding: 8rem 0;
   gap: 4.8rem;
+  padding-bottom: 8rem;
   border-bottom: 1px solid rgba(135, 136, 153, 0.357);
 }
 
@@ -1189,10 +1289,10 @@ body {
 }
 /* /////////////////////////////////////////////////////////// */
 
-.footer .container:last-child {
+.bottom-footer {
   padding: 4.8rem 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 .footer-icon {
