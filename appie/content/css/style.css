@@ -21,7 +21,7 @@ html {
   position: relative;
   font-size: 62.5%;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 body {
@@ -30,7 +30,7 @@ body {
   font-weight: 400;
   /* color: #0e1133; */
   color: #272a49;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .arrow-up {
@@ -492,6 +492,9 @@ body {
 }
 
 .feature-check-mark {
+  height: 2rem;
+  width: 2.4rem;
+  margin-right: 1.4rem;
   font-size: 2.2rem;
   padding: 0.2rem;
   color: #fff;
@@ -509,7 +512,6 @@ body {
   margin-top: 1.2rem;
   margin-bottom: 1.2rem;
   display: flex;
-  gap: 1.6rem;
 }
 
 .checks-title {
@@ -583,7 +585,7 @@ body {
   /* flex-direction: column; */
   /* justify-content: center; */
   padding: 3rem;
-  gap: 2.4rem 3.6rem;
+  gap: 2rem;
   border: 1px solid rgba(102, 102, 102, 0.27);
   transition: all 0.3s;
 }
@@ -593,6 +595,7 @@ body {
 }
 
 .benefits-list-element--color {
+  padding-right: 1.4rem;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -1049,8 +1052,10 @@ body {
   width: 40%;
   position: absolute;
 
-  top: 5%;
-  right: -15%;
+  top: 8%;
+  right: -40%;
+
+  transform: translate(-50%, -50%);
 }
 
 .Sweet .pricing-plan-btn {
@@ -1165,6 +1170,14 @@ body {
   margin-bottom: 8rem;
 }
 
+.sponsers-container {
+  padding: 0 4em;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  gap: 4rem;
+}
+
 .sponsers-container .heading-primary {
   max-width: 40%;
   margin: 0 auto;
@@ -1190,6 +1203,8 @@ body {
 }
 
 .sponser-img {
+  width: 11rem;
+  height: 11rem;
   padding: 3.6rem;
   background-color: #fff;
   justify-self: center;
