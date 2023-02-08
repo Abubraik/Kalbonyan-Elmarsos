@@ -1,5 +1,14 @@
-let currentResult = 0;
+const defaultResult = 0;
+let currentResult = defaultResult;
 
-currentResult = (currentResult + 10) * 3;
+function getUserNumberInput() {
+  return parseInt(userInput.value);
+}
 
-// outputResult(currentResult, "");
+function add() {
+  const calcDescription = `${currentResult} + ${getUserNumberInput()}`;
+  currentResult = currentResult + getUserNumberInput();
+  outputResult(currentResult, calcDescription);
+}
+
+addBtn.addEventListener("click", add);
