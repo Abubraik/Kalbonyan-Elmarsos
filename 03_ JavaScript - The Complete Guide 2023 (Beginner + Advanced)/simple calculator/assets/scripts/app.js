@@ -2,16 +2,15 @@ const defaultResult = 0;
 let currentResult = defaultResult;
 let logEntries = [];
 
-//Get input from input field
+// Gets input from input field
 function getUserNumberInput() {
-  return parseInt(userInput.value);
+  return parseInt(usrInput.value);
 }
 
-// Write Calculation log
-function createAndWriteOutput(operator, resultBefore, calcNumber) {
-  const calcDescription = `${resultBefore} ${operator} ${calcNumber}`;
-  outputResult(currentResult, calcDescription); //from vendor file
-  userInput.value = "";
+// Generates and writes calculation log
+function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
+  const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
+  outputResult(currentResult, calcDescription); // from vendor file
 }
 
 function writeToLog(
@@ -22,7 +21,7 @@ function writeToLog(
 ) {
   const logEntry = {
     operation: operationIdentifier,
-    prev: prevResult,
+    prevResult: prevResult,
     number: operationNumber,
     result: newResult,
   };
@@ -30,46 +29,28 @@ function writeToLog(
   console.log(logEntries);
 }
 
-function calculateResult(calcType) {
+function calculate(operation) {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
-  let mathOperator;
-  console.log(enteredNumber);
-  if (!enteredNumber) return;
-  if (calcType === "ADD") {
+  let operator;
+  if (operation === "ADD") {
     currentResult += enteredNumber;
-    mathOperator = "+";
-  } else if (calcType === "SUBTRACT") {
+    operator = "+";
+  } else if (operation === "SUBTRACT") {
     currentResult -= enteredNumber;
-    mathOperator = "-";
-  } else if (calcType === "MULTIPLY") {
+    operator = "-";
+  } else if (operation === "MULTIPLY") {
     currentResult *= enteredNumber;
-    mathOperator = "*";
-  } else if (calcType === "DIVIDE") {
+    operator = "*";
+  } else {
     currentResult /= enteredNumber;
-    mathOperator = "/";
+    operator = "/";
   }
-
-  createAndWriteOutput(mathOperator, initialResult, enteredNumber);
-  writeToLog(calcType, initialResult, enteredNumber, currentResult);
+  createAndWriteOutput(operator, initialResult, enteredNumber);
+  writeToLog(operation, initialResult, enteredNumber, currentResult);
 }
 
-function add() {
-  calculateResult("ADD");
-}
-
-function subtract() {
-  calculateResult("SUBTRACT");
-}
-
-function multiply() {
-  calculateResult("MULTIPLY");
-}
-function divide() {
-  calculateResult("DIVIDE");
-}
-
-addBtn.addEventListener("click", add);
-subtractBtn.addEventListener("click", subtract);
-multiplyBtn.addEventListener("click", multiply);
-divideBtn.addEventListener("click", divide);
+addBtn.addEventListener("click", calculate.bind(this, "ADD"));
+subtractBtn.addEventListener("click", calculate.bind(this, "SUBTRACT"));
+multiplyBtn.addEventListener("click", calculate.bind(this, "MULTIPLY"));
+divideBtn.addEventListener("click", calculate.bind(this, "DIVIDE"));
