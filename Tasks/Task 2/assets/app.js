@@ -1,5 +1,4 @@
 const addButton = document.querySelectorAll("button");
-console.log(addButton);
 
 // addButton.forEach(() => {
 //   addEventListener("click", (e) => {
@@ -16,6 +15,7 @@ console.log(addButton);
 const notStartedButton = document.querySelector(".new");
 const inProgressButton = document.querySelector(".inProg");
 const completedButton = document.querySelector(".comp");
+
 const newTask = (status) => {
   const newTask = document.createElement("div");
   newTask.classList.add("task");
@@ -29,8 +29,15 @@ const newTask = (status) => {
     const parent = e.target.parentElement;
     parent.remove(e.target);
   });
-  const input = newTask.querySelector("input");
 
+  newTask.querySelector(".edit").addEventListener("click", (e) => {
+    const text = e.target.previousElementSibling;
+    console.log(text);
+    text.removeAttribute("readonly");
+    text.focus();
+  });
+
+  const input = newTask.querySelector("input");
   input.addEventListener("focusout", () =>
     input.setAttribute("readonly", "true")
   );

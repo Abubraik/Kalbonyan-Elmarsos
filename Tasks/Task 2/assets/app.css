@@ -80,4 +80,5 @@ input {
   border: 0;
   border-radius: 0.4rem;
   outline: none;
+  cursor: move;
 }
