@@ -16,30 +16,50 @@ console.log(addButton);
 const notStartedButton = document.querySelector(".new");
 const inProgressButton = document.querySelector(".inProg");
 const completedButton = document.querySelector(".comp");
-
-notStartedButton.addEventListener("click", (e) => {
-  const newTask = document.createElement("input");
+const newTask = (status) => {
+  const newTask = document.createElement("div");
   newTask.classList.add("task");
+  newTask.classList.add(status);
   newTask.innerHTML = `
-  <div class="input">
-  <input type="text" class="task" />
+  <input type="text" class="taskinp"/>
   <ion-icon name="create" class="edit"></ion-icon>
   <ion-icon name="trash" class="delete"></ion-icon>
-</div>`;
-  e.target.before(newTask);
-  newTask.focus();
+`;
+  newTask.querySelector(".delete").addEventListener("click", (e) => {
+    const parent = e.target.parentElement;
+    parent.remove(e.target);
+  });
+  const input = newTask.querySelector("input");
+
+  input.addEventListener("focusout", () =>
+    input.setAttribute("readonly", "true")
+  );
+  return newTask;
+};
+
+notStartedButton.addEventListener("click", (e) => {
+  const task = newTask("new");
+  e.target.parentElement.querySelector(".tasks").append(task);
+  const input = e.target.parentElement
+    .querySelector(".tasks")
+    .lastElementChild.querySelector("input");
+  input.focus();
 });
 
 inProgressButton.addEventListener("click", (e) => {
-  const newTask = document.createElement("input");
-  newTask.classList.add("task");
-  e.target.before(newTask);
-  newTask.focus();
+  const task = newTask("inProg");
+  e.target.parentElement.querySelector(".tasks").append(task);
+  const input = e.target.parentElement
+    .querySelector(".tasks")
+    .lastElementChild.querySelector("input");
+  input.focus();
 });
 
 completedButton.addEventListener("click", (e) => {
-  const newTask = document.createElement("input");
-  newTask.classList.add("task");
-  e.target.before(newTask);
-  newTask.focus();
+  const task = newTask("comp");
+  e.target.parentElement.querySelector(".tasks").append(task);
+  const input = e.target.parentElement
+    .querySelector(".tasks")
+    .lastElementChild.querySelector("input");
+  input.focus();
 });

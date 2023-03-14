@@ -41,32 +41,43 @@ h1 {
   gap: 1rem;
 }
 
-.input {
-  position: relative;
+.task {
+  background-color: #e0f6ee;
+  display: grid;
+  grid-template-columns: 3fr 0.3fr 0.5fr;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 0.4rem;
 }
 
 .edit {
-  position: absolute;
-  right: 12%;
-  top: 20%;
+  /* position: absolute; */
+  /* right: 12%; */
+  /* top: 20%; */
+  justify-self: end;
   color: rgb(121, 212, 153);
+  display: block;
   cursor: pointer;
   font-size: 1.4rem;
 }
 
 .delete {
-  position: absolute;
-  right: 3%;
-  top: 20%;
+  /* position: absolute; */
+  /* right: 3%; */
+  display: block;
+  justify-self: center;
+  /* top: 20%; */
   color: rgb(231, 109, 109);
   cursor: pointer;
   font-size: 1.4rem;
 }
 
-.task {
+input {
   padding: 0.8rem;
   font-size: 1.2rem;
   color: rgb(82, 79, 79);
   border: 0;
   border-radius: 0.4rem;
+  outline: none;
 }
