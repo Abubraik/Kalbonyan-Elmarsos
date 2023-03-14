@@ -1,20 +1,48 @@
 const addButton = document.querySelectorAll("button");
-
-// addButton.forEach(() => {
-//   addEventListener("click", (e) => {
-//     console.log(e.target.parentElement.firstElement.textContent);
-//   });
-// });
-
-// for (const btn of addButton) {
-//   addEventListener("click", () => {
-//     console.log(btn.parentElement);
-//   });
-// }
-
 const notStartedButton = document.querySelector(".new");
 const inProgressButton = document.querySelector(".inProg");
 const completedButton = document.querySelector(".comp");
+const column = document.querySelectorAll(".column");
+
+column.forEach((el) => {
+  el.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    const nearestElement = notDragging(el, e.clientY);
+    const draggable = document.querySelector(".dragging");
+    if (nearestElement == null) {
+      el.querySelector("ul").appendChild(draggable);
+    } else {
+      el.querySelector("ul").insertBefore(draggable, nearestElement);
+    }
+  });
+});
+
+const draggable = (e) => {
+  e.addEventListener("dragstart", () => {
+    e.classList.add("dragging");
+  });
+  e.addEventListener("dragend", () => {
+    e.classList.remove("dragging");
+  });
+};
+
+const notDragging = (el, y) => {
+  const tasks = Array.from(el.querySelectorAll(".draggable:not(.dragging)"));
+
+  tasks.reduce(
+    (closest, elements) => {
+      const track = elements.getBoundingClientRect();
+      const offset = y - track.top - track.height / 2;
+      console.log(offset);
+      if (offset < 0 && offset > closest.offset) {
+        return { offset: offset, element: child };
+      } else {
+        return closest;
+      }
+    },
+    { offset: Number.NEGATIVE_INFINITY }
+  );
+};
 
 const readonly = (e) => {
   e.setAttribute("readonly", "true");
@@ -23,6 +51,7 @@ const readonly = (e) => {
 const newTask = (status) => {
   const newTask = document.createElement("li");
   newTask.classList.add("task");
+  newTask.classList.add("draggable");
   newTask.setAttribute("draggable", "true");
   newTask.classList.add(status);
   newTask.innerHTML = `
@@ -54,6 +83,7 @@ const newTask = (status) => {
       readonly(input);
     }
   });
+
   return newTask;
 };
 
@@ -64,6 +94,8 @@ notStartedButton.addEventListener("click", (e) => {
     .querySelector(".tasks")
     .lastElementChild.querySelector("input");
   input.focus();
+
+  draggable(task);
 });
 
 inProgressButton.addEventListener("click", (e) => {
@@ -73,6 +105,7 @@ inProgressButton.addEventListener("click", (e) => {
     .querySelector(".tasks")
     .lastElementChild.querySelector("input");
   input.focus();
+  draggable(task);
 });
 
 completedButton.addEventListener("click", (e) => {
@@ -82,4 +115,5 @@ completedButton.addEventListener("click", (e) => {
     .querySelector(".tasks")
     .lastElementChild.querySelector("input");
   input.focus();
+  draggable(task);
 });
