@@ -15,9 +15,11 @@ class ElementAttribute {
 }
 
 class Component {
-  constructor(renderHookId) {
+  constructor(renderHookId, render = true) {
     this.hookId = renderHookId;
-    this.render();
+    if (render) {
+      this.render();
+    }
   }
 
   render() {}
@@ -62,20 +64,29 @@ class ShoppingCart extends Component {
     this.cartItems = updatedItems;
   }
 
+  orderProducts() {
+    console.log("Ordering....");
+    console.log(this.items);
+  }
+
   render() {
     const cartEl = this.createRootElement("section", "cart");
     cartEl.innerHTML = `
     <h2>Total: \$${0}</h2>
     <button>Order Now!</button>
     `;
+    const orderButton = cartEl.querySelector("button");
+    // orderButton.addEventListener("click", () => this.orderProducts());
+    orderButton.addEventListener("click", () => this.orderProducts());
     this.totalOutput = cartEl.querySelector("h2");
   }
 }
 
 class ProductItem extends Component {
   constructor(product, renderHookId) {
-    super(renderHookId);
+    super(renderHookId, false);
     this.product = product;
+    this.render();
   }
 
   addToCart() {
@@ -100,24 +111,30 @@ class ProductItem extends Component {
 }
 
 class ProductList extends Component {
-  products = [
-    new Product(
-      "A Pillow",
-      "https://cdn.thewirecutter.com/wp-content/media/2023/01/bedpillows-2048px-9999.jpg",
-      "A soft pillow!",
-      26.5
-    ),
+  #products = [];
 
-    new Product(
-      "A Carpet",
-      "https://m.media-amazon.com/images/I/71IdS-8oSDL._AC_UF1000,1000_QL80_.jpg",
-      "A soft Carpet!",
-      105.5
-    ),
-  ];
+  constructor(renderHookId, render) {
+    super(renderHookId, false);
+    this.fetchProducts();
+    this.render();
+  }
 
-  constructor(renderHookId) {
-    super(renderHookId);
+  fetchProducts() {
+    this.#products = [
+      new Product(
+        "A Pillow",
+        "https://cdn.thewirecutter.com/wp-content/media/2023/01/bedpillows-2048px-9999.jpg",
+        "A soft pillow!",
+        26.5
+      ),
+
+      new Product(
+        "A Carpet",
+        "https://m.media-amazon.com/images/I/71IdS-8oSDL._AC_UF1000,1000_QL80_.jpg",
+        "A soft Carpet!",
+        105.5
+      ),
+    ];
   }
 
   render() {
@@ -125,7 +142,7 @@ class ProductList extends Component {
       new ElementAttribute("id", "prod-list"),
     ]);
 
-    for (const prod of this.products) {
+    for (const prod of this.#products) {
       new ProductItem(prod, "prod-list");
     }
   }
